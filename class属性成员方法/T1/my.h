@@ -20,9 +20,14 @@
 }
 
 @property(nonatomic) int a,b,c; //定义属性
+@property NSString * message;  //定义message属性，类的实现里面并没有@synthesize
+                               // 所以会自动生成一个带下划线的成员 _message;
 
 -(int) sum: (int)aa andTo: (int)bb;
 -(int) sub: (int)aa : (int)bb;
 -(void) print;
+
+// 这个函数是上面message属性的get函数， 所以返回值必须与上面属性定义一致，在其中想要设置message属性，必须只能操作带下划线的成员_message;
+-(NSString *)message;
 @end
 #endif /* my_h */

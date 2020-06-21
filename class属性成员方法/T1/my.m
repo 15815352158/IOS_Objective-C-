@@ -35,4 +35,14 @@
     
     self->d=66; //保护成员内部可以使用
 }
+
+-(NSString *)message
+{
+    if(self->_message==nil)
+    {
+        self->_message=@"hello";
+    }
+    
+    return self->_message;
+}
 @end

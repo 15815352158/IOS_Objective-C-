@@ -27,11 +27,16 @@ int main(int argc, char * argv[]) {
         
           calc.c=3;  //点运算符按属性访问，已经声明为属性，所以没有问题
         
-        [calc print];       
+        [calc print];
+        
+        
         
         
         NSLog(@"a+b=%d\n",[calc sum : calc.a andTo : calc.b]);
         NSLog(@"age:%d\n",calc->age);
+       
+        NSLog(@"message:%@\n",calc.message); //调的是get函数 与下面等价
+        NSLog(@"message:%@\n",[calc message]);
         
         // Setup code that might create autoreleased objects goes here.
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
