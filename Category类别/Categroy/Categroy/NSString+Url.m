@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSString+Url.h"
 
 @implementation NSString(Url)
 
@@ -41,4 +42,31 @@
 }
 
 @end
+ 
+@implementation MyPoint
 
+@synthesize  x,y;
+-(void) printf
+{
+    NSLog(@"x=%d,y=%d",self.x,self.y);
+}
+@end
+
+
+@implementation MyRect
+@synthesize width,height;
+
+-(void)display
+{
+    [self printf];
+    NSLog(@"w:%d,h:%d\n",width,height);
+}
+@end
+@implementation MyPoint(Add)
+
+-(void) sum:(MyPoint *)point
+{
+    self.x +=point.x;
+    self.y +=point.y;
+}
+@end

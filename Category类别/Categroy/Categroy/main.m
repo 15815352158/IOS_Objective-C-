@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "NSString+Url.h"
+
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
     @autoreleasepool {
@@ -24,6 +25,21 @@ int main(int argc, char * argv[]) {
         }
         
         NSLog(@"==>%c", [str characterAtIndex:1]);//这里执行的不一定是分类的函数，所以最好不要用重写方法，因为执行不确定
+        
+        MyRect *rect=[MyRect new];
+        rect.x=10;
+        rect.y=15;
+        rect.width=10;
+        rect.height=45;
+        
+        [rect display];  //父类扩展中声明的函数
+        
+        MyPoint *point=[MyPoint new];
+        point.x=1;
+        point.y=2;
+        
+        [rect sum:point]; //父分类中的函数
+        [rect display];  //父类扩展中声明的函数
         
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
     }
